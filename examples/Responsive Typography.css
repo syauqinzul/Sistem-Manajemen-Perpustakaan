@@ -1,0 +1,20 @@
+/* Fluid Typography */
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+/* Viewport Units */
+.subtitle {
+    font-size: calc(1rem + 0.5vw);
+}
+
+/* Media Query based */
+body {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+}

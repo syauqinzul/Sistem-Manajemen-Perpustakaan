@@ -1,0 +1,121 @@
+/* Transitions */
+.btn {
+    transition: all 0.3s ease;
+    /* property duration timing-function delay */
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.book-item {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Animation Properties: */
+/* animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction, animation-fill-mode */
+/* Example with multiple properties */
+.card {
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+/* Shorthand Animation */
+.modal {
+    animation: fadeIn 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+/* Pause Animation on Hover */
+.modal:hover {
+    animation-play-state: paused;
+} 
+
+/* Infinite Animation Example */
+.spinner {
+    animation: spin 1s linear infinite;
+} 
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Keyframe Percentage Example */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+.bounce-item {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Animation Delay Example */
+.alert {
+    animation: fadeIn 0.5s ease 1s forwards;
+}
+
+/* Combining Multiple Animations */
+.multi-anim {
+    animation: fadeIn 0.5s ease, spin 2s linear infinite;
+}
+
+/* Note: Adjust animation properties as needed for different effects */
+
+/* Performance Considerations: */
+/* GPU Accelerated (Better Performance) */
+transform: translateY(-5px);
+opacity: 0.8;
+
+/* CPU Intensive (Worse Performance) */
+margin-top: -5px;
+background-color: rgba(0,0,0,0.8);
+
+/* Use transform and opacity for animations instead of changing layout properties */
+/* Avoid animating properties that trigger layout or paint recalculations */
+/* Use will-change property for elements that are animated frequently */
+/* Consider using CSS containment for complex animations */
+
+.will-change-example {
+    will-change: transform, opacity;
+}
+
+/* CSS Variables (Custom Properties) */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --transition-speed: 0.3s;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
